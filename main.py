@@ -3,7 +3,10 @@
 """Entry point."""
 
 import argparse
+
 from Tor_Project.api_tor import get_exit_nodes_ip
+
+#from IoC_Project.s1_api_ioc import
 
 # Parameters
 parser = argparse.ArgumentParser(description='Retrieves Tor exit nodes ip address using Tor DNSBL API')
@@ -16,7 +19,8 @@ def main():
     '''
         Does everything
     '''
-    get_exit_nodes_ip(args.export, args.silent, args.debug)
+    tabl_exit_nodes_ip = get_exit_nodes_ip(args.export, args.silent, args.debug)
+
 
 if __name__ == "__main__":
     main()
