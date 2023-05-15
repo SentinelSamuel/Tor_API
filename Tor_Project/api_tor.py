@@ -12,6 +12,7 @@ Retrieves exit nodes IP addresses from Tor DNSBL API.
 import re
 import argparse
 import requests
+from typing import Union
 from colorama import Fore, Style
 from tqdm import tqdm
 
@@ -22,11 +23,11 @@ parser.add_argument('-s', '--silent' , action="store_true", required=False, help
 parser.add_argument('--debug', action="store_true", required=False, help='Get all info')
 args = parser.parse_args()
 
-def get_exit_nodes_ip(export, silent, debug):
+def get_exit_nodes_ip(export, silent, debug) -> Union[bool, str]:
     '''
         Retrieves Tor exit nodes ip address using Tor DNSBL API
-        -E --> Export results in your file
-        -s --> Export results in your file
+        -E --> Export results in your file (return True if it worked)
+        -s --> Export results in your file (return all and IP list of exit nodes of Tor)
         --debug --> Get all info
     '''
     ###########################################################################
@@ -115,15 +116,25 @@ def get_exit_nodes_ip(export, silent, debug):
         with open(args.export, 'w', encoding="utf-8") as file_opened:
             for item in exit_nodes:
                 file_opened.write(f"{item}\n")
-        if not args.silent:
-            successtext(f"Exported the exit-nodes IP to '{args.export}'.")
         if args.debug:
             infotext(exit_nodes)
+        if not args.silent:
+            successtext(f"Exported the exit-nodes IP to '{args.export}'.")
+        if export:
+            return True
     else:
         if not args.silent:
-            print(f"\n\n{exit_nodes}")
+            if not silent:
+                print(f"\n\n{exit_nodes}")
+                return f"\n\n{exit_nodes}"
+            else:
+                return f"\n\n{exit_nodes}"
         else:
-            print(exit_nodes)
+            if not silent:
+                print(exit_nodes)
+                return exit_nodes
+            else:
+                return exit_nodes
 
 if __name__ == "__main__":
     get_exit_nodes_ip(args.export, args.silent, args.debug)
