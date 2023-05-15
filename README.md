@@ -10,5 +10,5 @@
 
 
 <p align="center">
-    Retrieves ip address Tor exit nodes using Tor DNSBL API <br/>
+    Retrieves Tor exit nodes ip address using Tor DNSBL API <br/>
 </p>
