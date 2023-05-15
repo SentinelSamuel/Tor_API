@@ -32,12 +32,6 @@ def get_exit_nodes_ip(export, silent, debug):
     ###########################################################################
     ######################## All tests and definitions ########################
     ###########################################################################
-    if export:
-        args.export = export
-    if silent:
-        args.silent = silent
-    if debug:
-        args.debug = debug
 
     # Info message
     def infotext(msg) -> str:
@@ -127,5 +121,9 @@ def get_exit_nodes_ip(export, silent, debug):
             infotext(exit_nodes)
     else:
         if not args.silent:
-            return f"\n\n{exit_nodes}"
-        return exit_nodes
+            print(f"\n\n{exit_nodes}")
+        else:
+            print(exit_nodes)
+
+if __name__ == "__main__":
+    get_exit_nodes_ip(args.export, args.silent, args.debug)
