@@ -127,6 +127,5 @@ def get_exit_nodes_ip(export, silent, debug):
             infotext(exit_nodes)
     else:
         if not args.silent:
-            print(f"\n\n{exit_nodes}")
-        else:
-            print(exit_nodes)
+            return f"\n\n{exit_nodes}"
+        return exit_nodes
