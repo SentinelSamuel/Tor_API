@@ -16,7 +16,7 @@ from colorama import Fore, Style
 from tqdm import tqdm
 
 # Parameters
-parser = argparse.ArgumentParser(description='Retrieves ip address from Tor exit nodes using Tor DNSBL API')
+parser = argparse.ArgumentParser(description='Retrieves Tor exit nodes ip address using Tor DNSBL API')
 parser.add_argument('-E', '--export', action="store", type=str, required=False, help='Export results in your file')
 parser.add_argument('-s', '--silent' , action="store_true", required=False, help='Display nothing but the result')
 parser.add_argument('--debug', action="store_true", required=False, help='Get all info')
