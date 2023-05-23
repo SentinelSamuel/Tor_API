@@ -20,3 +20,5 @@ cd Tor_API
 pip install -r requirements.txt
 chmod +x main.py Tor_Project/api_tor.py
 ```
+![image](https://github.com/SentinelSamuel/Tor_API/assets/114468569/e53471cf-c225-44e4-a637-c99c44d83646)
+
