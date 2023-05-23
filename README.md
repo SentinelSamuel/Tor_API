@@ -18,5 +18,5 @@
 git clone https://github.com/SentinelSamuel/
 cd Tor_API
 pip install -r requirements.txt
-chmod +x 
+chmod +x main.py
 ```
