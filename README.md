@@ -13,7 +13,7 @@
     Retrieves Tor exit nodes ip address using Tor DNSBL API <br/>
 </p>
 
-## Installation : 
+## 1) Installation : 
 ```
 git clone https://github.com/SentinelSamuel/Tor_API.git
 cd Tor_API
