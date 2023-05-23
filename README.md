@@ -12,3 +12,11 @@
 <p align="center">
     Retrieves Tor exit nodes ip address using Tor DNSBL API <br/>
 </p>
+
+## Installation : 
+```
+git clone https://github.com/SentinelSamuel/
+cd Tor_API
+pip install -r requirements.txt
+chmod +x 
+```
